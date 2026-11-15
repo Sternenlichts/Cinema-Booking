@@ -10,6 +10,7 @@ import {
   numeric,
   check,
   index,
+  primaryKey,
 } from "drizzle-orm/pg-core";
 
 import { sql } from "drizzle-orm";
@@ -21,6 +22,14 @@ export const bookingStatus = pgEnum("booking_status", [
   "PAID",
   "CANCELLED",
   "REFUNDED",
+]);
+
+export const ageRating = pgEnum("age_rating", [
+  "0+",
+  "6+",
+  "12+",
+  "16+",
+  "18+",
 ]);
 
 export const users = pgTable("users", {
@@ -48,7 +57,7 @@ export const movies = pgTable(
     director: varchar("director", { length: 100 }).notNull(),
     cover: varchar("cover", { length: 255 }).notNull(),
     description: text("description").notNull(),
-    ageRating: varchar("age_rating", { length: 5 }).notNull(),
+    ageRating: ageRating("age_rating").notNull(),
     durationMinutes: integer("duration_minutes").notNull(),
     votesCount: integer("votes_count").default(0).notNull(),
     rating: numeric("rating", { precision: 3, scale: 1 })
@@ -65,7 +74,7 @@ export const movies = pgTable(
   (t) => [
     check("movies_rating_range", sql`${t.rating} >= 0 AND ${t.rating} <= 10`),
     check("movies_duration_positive", sql`${t.durationMinutes} > 0`),
-    check("movies_votes_non_negative", sql`${t.durationMinutes} >= 0`),
+    check("movies_votes_non_negative", sql`${t.votesCount} >= 0`),
   ]
 );
 
@@ -114,6 +123,7 @@ export const sessions = pgTable(
   (t) => [
     index("sessions_movie_id_idx").on(t.movieId),
     index("sessions_hall_id_idx").on(t.hallId),
+    check("session_end_after_start", sql`${t.startTime} < ${t.endTime}`),
   ]
 );
 
@@ -122,6 +132,7 @@ export const bookings = pgTable(
   {
     id: serial("id").primaryKey(),
     status: bookingStatus("status").default("PENDING").notNull(),
+    expiresAt: timestamp("expires_at", { withTimezone: true }),
     totalPrice: numeric("total_price", { precision: 10, scale: 2 }).notNull(),
     createdAt: timestamp("created_at", { withTimezone: true })
       .defaultNow()
@@ -164,5 +175,26 @@ export const tickets = pgTable(
     check("tickets_row_positive", sql`${t.row} > 0`),
     check("tickets_seat_positive", sql`${t.seatNumber} > 0`),
     check("tickets_price_non_negative", sql`${t.price} >= 0`),
+  ]
+);
+
+export const genres = pgTable("genres", {
+  id: serial("id").primaryKey(),
+  name: varchar("name", { length: 50 }).notNull().unique(),
+});
+
+export const movieGenres = pgTable(
+  "movie_genres",
+  {
+    movieId: integer("movie_id")
+      .references(() => movies.id, { onDelete: "cascade" })
+      .notNull(),
+    genreId: integer("genre_id")
+      .references(() => genres.id, { onDelete: "restrict" })
+      .notNull(),
+  },
+  (t) => [
+    primaryKey({ columns: [t.movieId, t.genreId] }),
+    index("movie_genres_genre_id_idx").on(t.genreId),
   ]
 );
