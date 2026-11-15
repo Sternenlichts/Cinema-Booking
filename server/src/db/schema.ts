@@ -5,8 +5,6 @@ import {
   varchar,
   unique,
   timestamp,
-  time,
-  primaryKey,
   text,
   pgEnum,
   numeric,
@@ -24,8 +22,8 @@ export const bookingStatus = pgEnum("booking_status", [
 
 export const users = pgTable("users", {
   id: serial("id").primaryKey(),
-  firstName: varchar("first_name", { length: 20 }).notNull(),
-  lastName: varchar("last_name", { length: 20 }).notNull(),
+  firstName: varchar("first_name", { length: 50 }).notNull(),
+  lastName: varchar("last_name", { length: 50 }).notNull(),
   email: varchar("email", { length: 254 }).notNull().unique(),
   phone: varchar("phone", { length: 20 }).notNull().unique(),
   passwordHash: varchar("password_hash", { length: 255 }).notNull(),
@@ -105,7 +103,7 @@ export const bookings = pgTable(
       .references(() => users.id, { onDelete: "cascade" })
       .notNull(),
   },
-  (b) => [index("booking_user_id_idx").on(b.userId)]
+  (b) => [index("bookings_user_id_idx").on(b.userId)]
 );
 
 export const tickets = pgTable(
@@ -129,6 +127,6 @@ export const tickets = pgTable(
   },
   (t) => [
     unique("tickets_session_seat_uq").on(t.sessionId, t.row, t.seatNumber),
-    index("ticket_booking_id_inx").on(t.bookingId),
+    index("tickets_booking_id_idx").on(t.bookingId),
   ]
 );
