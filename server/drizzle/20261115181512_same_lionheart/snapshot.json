@@ -1,0 +1,659 @@
+{
+  "type": "diff",
+  "version": "9",
+  "dialect": "postgres",
+  "id": "6ca95b26-0ded-4597-b353-6fdf63f18e02",
+  "prevIds": [
+    "f85b9b0b-b905-4af7-82b6-14794ffd341b"
+  ],
+  "footprints": [
+    {
+      "statementType": "add_column",
+      "statementTarget": [
+        "column",
+        "public",
+        "movies",
+        "age_rating"
+      ],
+      "writes": [
+        "s|col|public.movies.age_rating",
+        "n|col|public.movies.age_rating",
+        "e|col|public.movies.age_rating"
+      ],
+      "reads": [
+        "n|tbl|public.movies",
+        "n|sch|public"
+      ]
+    },
+    {
+      "statementType": "add_column",
+      "statementTarget": [
+        "column",
+        "public",
+        "sessions",
+        "end_time"
+      ],
+      "writes": [
+        "s|col|public.sessions.end_time",
+        "n|col|public.sessions.end_time",
+        "e|col|public.sessions.end_time"
+      ],
+      "reads": [
+        "n|tbl|public.sessions",
+        "n|sch|public"
+      ]
+    },
+    {
+      "statementType": "add_column",
+      "statementTarget": [
+        "column",
+        "public",
+        "sessions",
+        "base_price"
+      ],
+      "writes": [
+        "s|col|public.sessions.base_price",
+        "n|col|public.sessions.base_price",
+        "e|col|public.sessions.base_price"
+      ],
+      "reads": [
+        "n|tbl|public.sessions",
+        "n|sch|public"
+      ]
+    },
+    {
+      "statementType": "alter_column",
+      "statementTarget": [
+        "column",
+        "public",
+        "bookings",
+        "created_at"
+      ],
+      "writes": [
+        "s|colprop|public.bookings.created_at.type",
+        "s|colprop|public.bookings.created_at.default"
+      ],
+      "reads": [
+        "n|tbl|public.bookings",
+        "n|sch|public",
+        "n|col|public.bookings.created_at"
+      ],
+      "sqlHash": "a57d7aa14ab7fc22"
+    },
+    {
+      "statementType": "alter_column",
+      "statementTarget": [
+        "column",
+        "public",
+        "bookings",
+        "updated_at"
+      ],
+      "writes": [
+        "s|colprop|public.bookings.updated_at.type",
+        "s|colprop|public.bookings.updated_at.default"
+      ],
+      "reads": [
+        "n|tbl|public.bookings",
+        "n|sch|public",
+        "n|col|public.bookings.updated_at"
+      ],
+      "sqlHash": "574bf8bae23da3fc"
+    },
+    {
+      "statementType": "alter_column",
+      "statementTarget": [
+        "column",
+        "public",
+        "halls",
+        "created_at"
+      ],
+      "writes": [
+        "s|colprop|public.halls.created_at.type",
+        "s|colprop|public.halls.created_at.default"
+      ],
+      "reads": [
+        "n|tbl|public.halls",
+        "n|sch|public",
+        "n|col|public.halls.created_at"
+      ],
+      "sqlHash": "b33979c6812ae810"
+    },
+    {
+      "statementType": "alter_column",
+      "statementTarget": [
+        "column",
+        "public",
+        "halls",
+        "updated_at"
+      ],
+      "writes": [
+        "s|colprop|public.halls.updated_at.type",
+        "s|colprop|public.halls.updated_at.default"
+      ],
+      "reads": [
+        "n|tbl|public.halls",
+        "n|sch|public",
+        "n|col|public.halls.updated_at"
+      ],
+      "sqlHash": "1f769b23a53dfd2b"
+    },
+    {
+      "statementType": "alter_column",
+      "statementTarget": [
+        "column",
+        "public",
+        "movies",
+        "created_at"
+      ],
+      "writes": [
+        "s|colprop|public.movies.created_at.type",
+        "s|colprop|public.movies.created_at.default"
+      ],
+      "reads": [
+        "n|tbl|public.movies",
+        "n|sch|public",
+        "n|col|public.movies.created_at"
+      ],
+      "sqlHash": "7cb4837719e7b607"
+    },
+    {
+      "statementType": "alter_column",
+      "statementTarget": [
+        "column",
+        "public",
+        "movies",
+        "updated_at"
+      ],
+      "writes": [
+        "s|colprop|public.movies.updated_at.type",
+        "s|colprop|public.movies.updated_at.default"
+      ],
+      "reads": [
+        "n|tbl|public.movies",
+        "n|sch|public",
+        "n|col|public.movies.updated_at"
+      ],
+      "sqlHash": "f6099d7bb8a39071"
+    },
+    {
+      "statementType": "alter_column",
+      "statementTarget": [
+        "column",
+        "public",
+        "sessions",
+        "created_at"
+      ],
+      "writes": [
+        "s|colprop|public.sessions.created_at.type",
+        "s|colprop|public.sessions.created_at.default"
+      ],
+      "reads": [
+        "n|tbl|public.sessions",
+        "n|sch|public",
+        "n|col|public.sessions.created_at"
+      ],
+      "sqlHash": "6c1a609fd0f9726c"
+    },
+    {
+      "statementType": "alter_column",
+      "statementTarget": [
+        "column",
+        "public",
+        "sessions",
+        "updated_at"
+      ],
+      "writes": [
+        "s|colprop|public.sessions.updated_at.type",
+        "s|colprop|public.sessions.updated_at.default"
+      ],
+      "reads": [
+        "n|tbl|public.sessions",
+        "n|sch|public",
+        "n|col|public.sessions.updated_at"
+      ],
+      "sqlHash": "7ea3e395330013c3"
+    },
+    {
+      "statementType": "alter_column",
+      "statementTarget": [
+        "column",
+        "public",
+        "tickets",
+        "created_at"
+      ],
+      "writes": [
+        "s|colprop|public.tickets.created_at.type",
+        "s|colprop|public.tickets.created_at.default"
+      ],
+      "reads": [
+        "n|tbl|public.tickets",
+        "n|sch|public",
+        "n|col|public.tickets.created_at"
+      ],
+      "sqlHash": "44eb987a3faafb87"
+    },
+    {
+      "statementType": "alter_column",
+      "statementTarget": [
+        "column",
+        "public",
+        "tickets",
+        "updated_at"
+      ],
+      "writes": [
+        "s|colprop|public.tickets.updated_at.type",
+        "s|colprop|public.tickets.updated_at.default"
+      ],
+      "reads": [
+        "n|tbl|public.tickets",
+        "n|sch|public",
+        "n|col|public.tickets.updated_at"
+      ],
+      "sqlHash": "b6f303ace428a884"
+    },
+    {
+      "statementType": "alter_column",
+      "statementTarget": [
+        "column",
+        "public",
+        "users",
+        "created_at"
+      ],
+      "writes": [
+        "s|colprop|public.users.created_at.type",
+        "s|colprop|public.users.created_at.default"
+      ],
+      "reads": [
+        "n|tbl|public.users",
+        "n|sch|public",
+        "n|col|public.users.created_at"
+      ],
+      "sqlHash": "b6078d89aa1555e1"
+    },
+    {
+      "statementType": "alter_column",
+      "statementTarget": [
+        "column",
+        "public",
+        "users",
+        "updated_at"
+      ],
+      "writes": [
+        "s|colprop|public.users.updated_at.type",
+        "s|colprop|public.users.updated_at.default"
+      ],
+      "reads": [
+        "n|tbl|public.users",
+        "n|sch|public",
+        "n|col|public.users.updated_at"
+      ],
+      "sqlHash": "06fe1fc97a4f4681"
+    },
+    {
+      "statementType": "add_check",
+      "statementTarget": [
+        "table",
+        "public",
+        "halls"
+      ],
+      "writes": [
+        "s|ck|public.halls.halls_rows_positive",
+        "n|ck|public.halls.halls_rows_positive",
+        "e|ck|public.halls.halls_rows_positive",
+        "n|con|public.halls.halls_rows_positive"
+      ],
+      "reads": [
+        "n|tbl|public.halls",
+        "n|sch|public",
+        "n|col|public.halls.rows_count"
+      ]
+    },
+    {
+      "statementType": "add_check",
+      "statementTarget": [
+        "table",
+        "public",
+        "halls"
+      ],
+      "writes": [
+        "s|ck|public.halls.halls_seats_positive",
+        "n|ck|public.halls.halls_seats_positive",
+        "e|ck|public.halls.halls_seats_positive",
+        "n|con|public.halls.halls_seats_positive"
+      ],
+      "reads": [
+        "n|tbl|public.halls",
+        "n|sch|public",
+        "n|col|public.halls.seats_per_row"
+      ]
+    },
+    {
+      "statementType": "add_check",
+      "statementTarget": [
+        "table",
+        "public",
+        "movies"
+      ],
+      "writes": [
+        "s|ck|public.movies.movies_rating_range",
+        "n|ck|public.movies.movies_rating_range",
+        "e|ck|public.movies.movies_rating_range",
+        "n|con|public.movies.movies_rating_range"
+      ],
+      "reads": [
+        "n|tbl|public.movies",
+        "n|sch|public",
+        "n|col|public.movies.rating"
+      ]
+    },
+    {
+      "statementType": "add_check",
+      "statementTarget": [
+        "table",
+        "public",
+        "movies"
+      ],
+      "writes": [
+        "s|ck|public.movies.movies_duration_positive",
+        "n|ck|public.movies.movies_duration_positive",
+        "e|ck|public.movies.movies_duration_positive",
+        "n|con|public.movies.movies_duration_positive"
+      ],
+      "reads": [
+        "n|tbl|public.movies",
+        "n|sch|public",
+        "n|col|public.movies.duration_minutes"
+      ]
+    },
+    {
+      "statementType": "add_check",
+      "statementTarget": [
+        "table",
+        "public",
+        "movies"
+      ],
+      "writes": [
+        "s|ck|public.movies.movies_votes_non_negative",
+        "n|ck|public.movies.movies_votes_non_negative",
+        "e|ck|public.movies.movies_votes_non_negative",
+        "n|con|public.movies.movies_votes_non_negative"
+      ],
+      "reads": [
+        "n|tbl|public.movies",
+        "n|sch|public",
+        "n|col|public.movies.duration_minutes"
+      ]
+    },
+    {
+      "statementType": "add_check",
+      "statementTarget": [
+        "table",
+        "public",
+        "tickets"
+      ],
+      "writes": [
+        "s|ck|public.tickets.tickets_row_positive",
+        "n|ck|public.tickets.tickets_row_positive",
+        "e|ck|public.tickets.tickets_row_positive",
+        "n|con|public.tickets.tickets_row_positive"
+      ],
+      "reads": [
+        "n|tbl|public.tickets",
+        "n|sch|public",
+        "n|col|public.tickets.row"
+      ]
+    },
+    {
+      "statementType": "add_check",
+      "statementTarget": [
+        "table",
+        "public",
+        "tickets"
+      ],
+      "writes": [
+        "s|ck|public.tickets.tickets_seat_positive",
+        "n|ck|public.tickets.tickets_seat_positive",
+        "e|ck|public.tickets.tickets_seat_positive",
+        "n|con|public.tickets.tickets_seat_positive"
+      ],
+      "reads": [
+        "n|tbl|public.tickets",
+        "n|sch|public",
+        "n|col|public.tickets.seat_number"
+      ]
+    },
+    {
+      "statementType": "add_check",
+      "statementTarget": [
+        "table",
+        "public",
+        "tickets"
+      ],
+      "writes": [
+        "s|ck|public.tickets.tickets_price_non_negative",
+        "n|ck|public.tickets.tickets_price_non_negative",
+        "e|ck|public.tickets.tickets_price_non_negative",
+        "n|con|public.tickets.tickets_price_non_negative"
+      ],
+      "reads": [
+        "n|tbl|public.tickets",
+        "n|sch|public",
+        "n|col|public.tickets.price"
+      ]
+    }
+  ],
+  "deltas": [
+    {
+      "op": "create",
+      "row": {
+        "schema": "public",
+        "table": "movies",
+        "name": "age_rating",
+        "type": "varchar(5)",
+        "typeSchema": null,
+        "notNull": true,
+        "dimensions": 0,
+        "default": null,
+        "generated": null,
+        "identity": null,
+        "entityType": "columns"
+      }
+    },
+    {
+      "op": "create",
+      "row": {
+        "schema": "public",
+        "table": "sessions",
+        "name": "end_time",
+        "type": "timestamp with time zone",
+        "typeSchema": null,
+        "notNull": true,
+        "dimensions": 0,
+        "default": null,
+        "generated": null,
+        "identity": null,
+        "entityType": "columns"
+      }
+    },
+    {
+      "op": "create",
+      "row": {
+        "schema": "public",
+        "table": "sessions",
+        "name": "base_price",
+        "type": "numeric(10,2)",
+        "typeSchema": null,
+        "notNull": true,
+        "dimensions": 0,
+        "default": null,
+        "generated": null,
+        "identity": null,
+        "entityType": "columns"
+      }
+    },
+    {
+      "op": "create",
+      "row": {
+        "schema": "public",
+        "table": "halls",
+        "name": "halls_rows_positive",
+        "value": "\"rows_count\" > 0",
+        "entityType": "checks"
+      }
+    },
+    {
+      "op": "create",
+      "row": {
+        "schema": "public",
+        "table": "halls",
+        "name": "halls_seats_positive",
+        "value": "\"seats_per_row\" > 0",
+        "entityType": "checks"
+      }
+    },
+    {
+      "op": "create",
+      "row": {
+        "schema": "public",
+        "table": "movies",
+        "name": "movies_rating_range",
+        "value": "\"rating\" >= 0 AND \"rating\" <= 10",
+        "entityType": "checks"
+      }
+    },
+    {
+      "op": "create",
+      "row": {
+        "schema": "public",
+        "table": "movies",
+        "name": "movies_duration_positive",
+        "value": "\"duration_minutes\" > 0",
+        "entityType": "checks"
+      }
+    },
+    {
+      "op": "create",
+      "row": {
+        "schema": "public",
+        "table": "movies",
+        "name": "movies_votes_non_negative",
+        "value": "\"duration_minutes\" >= 0",
+        "entityType": "checks"
+      }
+    },
+    {
+      "op": "create",
+      "row": {
+        "schema": "public",
+        "table": "tickets",
+        "name": "tickets_row_positive",
+        "value": "\"row\" > 0",
+        "entityType": "checks"
+      }
+    },
+    {
+      "op": "create",
+      "row": {
+        "schema": "public",
+        "table": "tickets",
+        "name": "tickets_seat_positive",
+        "value": "\"seat_number\" > 0",
+        "entityType": "checks"
+      }
+    },
+    {
+      "op": "create",
+      "row": {
+        "schema": "public",
+        "table": "tickets",
+        "name": "tickets_price_non_negative",
+        "value": "\"price\" >= 0",
+        "entityType": "checks"
+      }
+    },
+    {
+      "op": "alter",
+      "key": "columns\u0000[\"public\",\"bookings\",\"created_at\"]",
+      "set": {
+        "type": "timestamp with time zone"
+      }
+    },
+    {
+      "op": "alter",
+      "key": "columns\u0000[\"public\",\"bookings\",\"updated_at\"]",
+      "set": {
+        "type": "timestamp with time zone"
+      }
+    },
+    {
+      "op": "alter",
+      "key": "columns\u0000[\"public\",\"halls\",\"created_at\"]",
+      "set": {
+        "type": "timestamp with time zone"
+      }
+    },
+    {
+      "op": "alter",
+      "key": "columns\u0000[\"public\",\"halls\",\"updated_at\"]",
+      "set": {
+        "type": "timestamp with time zone"
+      }
+    },
+    {
+      "op": "alter",
+      "key": "columns\u0000[\"public\",\"movies\",\"created_at\"]",
+      "set": {
+        "type": "timestamp with time zone"
+      }
+    },
+    {
+      "op": "alter",
+      "key": "columns\u0000[\"public\",\"movies\",\"updated_at\"]",
+      "set": {
+        "type": "timestamp with time zone"
+      }
+    },
+    {
+      "op": "alter",
+      "key": "columns\u0000[\"public\",\"sessions\",\"created_at\"]",
+      "set": {
+        "type": "timestamp with time zone"
+      }
+    },
+    {
+      "op": "alter",
+      "key": "columns\u0000[\"public\",\"sessions\",\"updated_at\"]",
+      "set": {
+        "type": "timestamp with time zone"
+      }
+    },
+    {
+      "op": "alter",
+      "key": "columns\u0000[\"public\",\"tickets\",\"created_at\"]",
+      "set": {
+        "type": "timestamp with time zone"
+      }
+    },
+    {
+      "op": "alter",
+      "key": "columns\u0000[\"public\",\"tickets\",\"updated_at\"]",
+      "set": {
+        "type": "timestamp with time zone"
+      }
+    },
+    {
+      "op": "alter",
+      "key": "columns\u0000[\"public\",\"users\",\"created_at\"]",
+      "set": {
+        "type": "timestamp with time zone"
+      }
+    },
+    {
+      "op": "alter",
+      "key": "columns\u0000[\"public\",\"users\",\"updated_at\"]",
+      "set": {
+        "type": "timestamp with time zone"
+      }
+    }
+  ]
+}
